@@ -1,0 +1,25 @@
+import time  # Puxa o relógio do computador
+
+preco_compra = 50
+preco_atual = 50
+limite_stop_loss = 45
+
+print("--- INICIANDO MONITORAMENTO INFINITO (24H) ---")
+
+# 'while True' faz o robô rodar para sempre!
+while True:
+    print(f"Preço atual do Roblox: CHF {preco_atual}")
+    
+    if preco_atual <= limite_stop_loss:
+        print("🚨 ALERTA GERAL! Stop Loss atingido!")
+        print("Vendendo tudo para proteger o fundo. Fim do monitoramento.")
+        break  # O comando 'break' desliga o robô após salvar o dinheiro!
+        
+    print("🔄 Tudo seguro. Próxima checagem em 2 segundos...")
+    print("-" * 40)
+    
+    # Simula o mercado caindo de 1 em 1 franco a cada rodada
+    preco_atual = preco_atual - 1
+    
+    time.sleep(2)  # Faz o robô esperar 2 segundos antes de repetir
+
